@@ -25,6 +25,8 @@
         "react/jsx-filename-extension": [0],
         "import/prefer-default-export": "off",
         "no-nested-ternary": "off",
+        "no-return-assign": "off",
+        "prefer-destructuring": "off",
         "import/extensions": [
             "error",
             "ignorePackages",
