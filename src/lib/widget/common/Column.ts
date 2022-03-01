@@ -1,5 +1,5 @@
-import ComponentStyle from "../core/components/ComponentStyle";
-import Wrapper, { WrapperProps } from "../core/tags/Wrapper";
+import ComponentStyle from "../../core/components/ComponentStyle";
+import Wrapper, { WrapperProps } from "../../core/tags/Wrapper";
 
 interface ColumnProps extends WrapperProps {
     span?: number;

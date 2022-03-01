@@ -1,6 +1,6 @@
 import Wrapper from "lib/core/tags/Wrapper";
-import Article, { ArticleProps } from "./common/Article";
-import Section from "./common/Section";
+import Article, { ArticleProps } from "../common/Article";
+import Section from "../common/Section";
 
 export interface ContactProps {
     title: string;
