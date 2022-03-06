@@ -1,12 +1,11 @@
-import ResumeTemplate, { ResumeTemplateProps } from "lib/template/ResumeTemplate";
 import { FunctionComponent } from "react";
 
 interface PreviewerProps {
-    data: ResumeTemplateProps;
+    template: string;
 }
 
 const Previewer: FunctionComponent<PreviewerProps> = (props: PreviewerProps) => (
-    <div dangerouslySetInnerHTML={{ __html: ResumeTemplate(props.data).outerHTML }} />
+    <div dangerouslySetInnerHTML={{ __html: props.template }} />
 );
 
 export default Previewer;
