@@ -1,11 +1,52 @@
+type Section<T> = {
+    title?: string;
+    body: T;
+};
+
+type Contact = {
+    type: string;
+    value: string;
+}
+
+type Skill = {
+    type: string;
+    level: string;
+}
+
+type Job = {
+    position: string;
+    companyName: string;
+    term: {
+        start: string;
+        end?: string;
+    };
+    location?: string;
+    description?: string;   
+}
+
+type Education = {
+    title: string;
+    name: string;
+    term: {
+        start: string;
+        end?: string;
+    };
+    location?: string;
+    description?: string;   
+}
+
 type TemplateData = {
     firstName: string;
     lastName: string;
-    wantedJobTitle: string;
-    professionalSummary: string;
     image: string;
-    contact?: { type: string, value: string }[];
-    skills?: { type: string, level: string }[];
+    wantedJobTitle: string;
+    sections: {
+        professionalSummary: Section<string>;
+        contact?: Section<Contact[]>;
+        skills?: Section<Skill[]>;
+        workExperience?: Section<Job[]>;
+        education?: Section<Education[]>
+    }
 }
 
 export default TemplateData;

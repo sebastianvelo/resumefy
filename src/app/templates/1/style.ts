@@ -7,22 +7,26 @@ const common = {
         width: "100%"
     },
     sectionTitle: {
-        fontSize: "28px",
-        fontWeight: "bolder",
+        fontSize: "36px",
+        fontWeight: "900",
         textDecoration: "underline"
     },
     sectionItem: {
-        margin: "10px 0px"
+        margin: "6px 0px"
     },
     sectionItemTitle: {
-        fontSize: "22px",
-        fontWeight: "bold",
-    }
+        fontSize: "24px",
+        fontWeight: "600",
+    },
+    sectionItemValue: {
+        fontSize: "20px",
+    },
 };
 
 const left = {
     leftColumn: {
-        background: "pink",
+        background: "#E22800",
+        color: "white",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -31,7 +35,7 @@ const left = {
     photo: {
         height: "300px",
         borderRadius: "50%",
-        border: "15px solid lightpink"
+        border: "15px solid #FE8D75"
     },
 };
 
@@ -45,18 +49,17 @@ const right = {
         fontSize: "70px",
     },
     wantedJobTitle: {
-        fontSize: "30px"
+        fontSize: "35px",
+        fontWeight: "bold"
     },
     professionalSummary: {
-        fontSize: "16px",
+        fontSize: "26px",
         textAlign: "justify"
     },
 };
 
-const style = getStyleSheet({
+export const style1 = getStyleSheet({
     resume: {
-        transform: "scale(0.75)",
-        transformOrigin: "0 0",
         width: "1240px",
         height: "1754px",
         border: "1px solid black",
@@ -68,7 +71,3 @@ const style = getStyleSheet({
     ...left,
     ...right,
 });
-
-console.log(style)
-
-export default style;

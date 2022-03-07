@@ -1,6 +1,3 @@
-import TemplateStructure from "app/lib/TemplateStructure";
-
-const structure: TemplateStructure = `
 <div style="{{style.resume}}">
     <section style="{{style.leftColumn}}">
         <img src="{{image}}" style="{{style.photo}}" />
@@ -70,12 +67,8 @@ const structure: TemplateStructure = `
                         <p style="{{../../../style.sectionItemTitle}}">{{this.position}}</p>
                         <p>
                             <span style="{{../../../style.sectionItemValue}}">{{this.companyName}}, </span>
-                            <span>
-                                {{this.term.start}} -
-                                {{#if this.term.end}} {{this.term.end}}
-                                {{else}} currently
-                                {{/if}}
-                            </span>
+                            <span>{{this.term.start}} - {{#if this.term.end}} {{this.term.end}} {{else}} Actualidad
+                                {{/if}}</span>
                         </p>
                         <p style="{{../../../style.sectionItemValue}}">{{this.description}}</p>
                     </div>
@@ -114,6 +107,3 @@ const structure: TemplateStructure = `
         </div>
     </section>
 </div>
-`;
-
-export default structure;
