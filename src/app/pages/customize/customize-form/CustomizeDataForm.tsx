@@ -7,7 +7,7 @@ export interface CustomizeDataFormProps {
 }
 
 const CustomizeDataForm: FunctionComponent<CustomizeDataFormProps> = (props: CustomizeDataFormProps) => (
-    <div className="bg-gray-900 text-white px-10 space-y-4 py-2 overflow-y-auto max-h-screen w-2/3">
+    <div className="bg-gray-900 text-white px-10 space-y-4 py-2 overflow-y-auto max-h-screen w-3/4">
         <h1 className="text-4xl font-black text-center">{props.title}</h1>
         <div className="space-y-8">
             {props.sections.map(InputSection)}

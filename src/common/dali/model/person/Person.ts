@@ -35,13 +35,13 @@ type Education = {
     description?: string;   
 }
 
-type TemplateData = {
-    firstName: string;
-    lastName: string;
-    image: string;
-    wantedJobTitle: string;
-    sections: {
-        professionalSummary: Section<string>;
+type Person = {
+    firstName?: string;
+    lastName?: string;
+    image?: string;
+    wantedJobTitle?: string;
+    sections?: {
+        professionalSummary?: Section<string>;
         contact?: Section<Contact[]>;
         skills?: Section<Skill[]>;
         workExperience?: Section<Job[]>;
@@ -49,4 +49,4 @@ type TemplateData = {
     }
 }
 
-export default TemplateData;
+export default Person;

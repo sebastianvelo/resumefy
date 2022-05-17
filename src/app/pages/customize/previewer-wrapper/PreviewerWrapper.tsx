@@ -1,21 +1,17 @@
 import Previewer from "app/components/previewer/Previewer";
-import TemplateData from "app/lib/TemplateData";
-import TemplateStructure from "app/lib/TemplateStructure";
-import TemplateStyle from "app/lib/TemplateStyle";
-import Handlebars from "handlebars";
+import Person from "common/dali/model/person/Person";
 import { FunctionComponent } from "react";
+import * as Dali from "common/dali/Dali";
 
 interface PreviewerWrapperProps {
-    data: TemplateData;
-    structure: TemplateStructure;
-    style: TemplateStyle;
+    data: Person;
+    type: string;
+    theme: string;
 }
 
 const PreviewerWrapper: FunctionComponent<PreviewerWrapperProps> = (props: PreviewerWrapperProps) => (
-    <div className="overflow-x-auto max-h-screen w-1/2 flex bg-gray-800">
-        <div className="transform scale-75 origin-top-left">
-            <Previewer template={Handlebars.compile(props.structure)({ style: props.style, ...props.data })} />
-        </div>
+    <div className="overflow-x-hidden max-h-screen flex bg-gray-800 w-3/4">
+        <Previewer template={Dali.getHTML(props)} />
     </div>
 );
 

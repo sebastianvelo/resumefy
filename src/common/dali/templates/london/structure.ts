@@ -1,13 +1,10 @@
-import TemplateStructure from "app/lib/TemplateStructure";
-
-const structure: TemplateStructure = `
+const structure = `
 <div style="{{style.resume}}">
     <section style="{{style.leftColumn}}">
         <img src="{{image}}" style="{{style.photo}}" />
         {{#with sections}}
 
-        {{#with contact}}
-        {{#if this}}
+        {{#show-section contact}}
         <div style="{{../../style.section}}">
             <h2 style="{{../../style.sectionTitle}}">{{this.title}}</h2>
             <div>
@@ -19,11 +16,9 @@ const structure: TemplateStructure = `
                 {{/each}}
             </div>
         </div>
-        {{/if}}
-        {{/with}}
+        {{/show-section}}
 
-        {{#with skills}}
-        {{#if this}}
+        {{#show-section skills}}
         <div style="{{../../style.section}}">
             <h2 style="{{../../style.sectionTitle}}">{{this.title}}</h2>
             <div>
@@ -35,8 +30,7 @@ const structure: TemplateStructure = `
                 {{/each}}
             </div>
         </div>
-        {{/if}}
-        {{/with}}
+        {{/show-section}}
 
         {{/with}}
     </section>
@@ -49,19 +43,16 @@ const structure: TemplateStructure = `
         <div>
             {{#with sections}}
 
-            {{#with professionalSummary}}
-            {{#if this}}
+            {{#show-section professionalSummary}}
             <div style="{{../../style.section}}">
                 <h2 style="{{../../style.sectionTitle}}">{{this.title}}</h2>
                 <div style="{{../../style.professionalSummary}}">
                     <p>{{this.body}}</p>
                 </div>
             </div>
-            {{/if}}
-            {{/with}}
+            {{/show-section}}
 
-            {{#with workExperience}}
-            {{#if this}}
+            {{#show-section workExperience}}
             <div style="{{../../style.section}}">
                 <h2 style="{{../../style.sectionTitle}}">{{this.title}}</h2>
                 <div>
@@ -70,23 +61,16 @@ const structure: TemplateStructure = `
                         <p style="{{../../../style.sectionItemTitle}}">{{this.position}}</p>
                         <p>
                             <span style="{{../../../style.sectionItemValue}}">{{this.companyName}}, </span>
-                            <span>
-                                {{this.term.start}} -
-                                {{#if this.term.end}} {{this.term.end}}
-                                {{else}} currently
-                                {{/if}}
-                            </span>
+                            <span>{{show-term this.term}}</span>
                         </p>
                         <p style="{{../../../style.sectionItemValue}}">{{this.description}}</p>
                     </div>
                     {{/each}}
                 </div>
             </div>
-            {{/if}}
-            {{/with}}
+            {{/show-section}}
 
-            {{#with education}}
-            {{#if this}}
+            {{#show-section education}}
             <div style="{{../../style.section}}">
                 <h2 style="{{../../style.sectionTitle}}">{{this.title}}</h2>
                 <div>
@@ -95,20 +79,14 @@ const structure: TemplateStructure = `
                         <p style="{{../../../style.sectionItemTitle}}">{{this.title}}</p>
                         <p>
                             <span style="{{../../../style.sectionItemValue}}">{{this.name}}, </span>
-                            <span>
-                                {{this.term.start}} -
-                                {{#if this.term.end}} {{this.term.end}}
-                                {{else}} currently
-                                {{/if}}
-                            </span>
+                            <span>{{show-term this.term}}</span>
                         </p>
                         <p style="{{../../../style.sectionItemValue}}">{{this.description}}</p>
                     </div>
                     {{/each}}
                 </div>
             </div>
-            {{/if}}
-            {{/with}}
+            {{/show-section}}
 
             {{/with}}
         </div>

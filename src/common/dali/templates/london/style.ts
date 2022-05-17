@@ -1,5 +1,5 @@
-/* eslint-disable */
-import { getStyleSheet } from "app/util/Util"
+import { getStyleSheet } from "../../common/util/Util";
+import Theme from "../../model/theme/Theme";
 
 const common = {
     section: {
@@ -9,10 +9,10 @@ const common = {
     sectionTitle: {
         fontSize: "36px",
         fontWeight: "900",
-        textDecoration: "underline"
+        borderBottom: "2px solid currentColor"
     },
     sectionItem: {
-        margin: "6px 0px"
+        margin: "20px 0px"
     },
     sectionItemTitle: {
         fontSize: "24px",
@@ -23,9 +23,9 @@ const common = {
     },
 };
 
-const left = {
+const left = (theme?: Theme) => ({
     leftColumn: {
-        background: "#E22800",
+        background: theme?.mainColor ?? "#E22800",
         color: "white",
         display: "flex",
         flexDirection: "column",
@@ -37,7 +37,7 @@ const left = {
         borderRadius: "50%",
         border: "15px solid #FE8D75"
     },
-};
+});
 
 const right = {
     rightColumn: {
@@ -58,16 +58,20 @@ const right = {
     },
 };
 
-export const style1 = getStyleSheet({
+const style = (theme?: Theme) => getStyleSheet({
     resume: {
         width: "1240px",
         height: "1754px",
         border: "1px solid black",
         display: "grid",
+        margin: "0",
+        padding: "0",
         gridTemplateColumns: "repeat(3, 1fr)",
         fontFamily: `ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`
     },
     ...common,
-    ...left,
+    ...left(theme),
     ...right,
 });
+
+export default style;

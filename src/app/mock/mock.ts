@@ -1,7 +1,8 @@
-import TemplateBuilder from "app/lib/TemplateBuilder";
-import template1 from "app/templates/1/template";
+import TemplateDTO from "common/dali/model/template/TemplateDTO";
 
-const mock: TemplateBuilder = {
+const mock: TemplateDTO = {
+    type: "paris",
+    theme: "primary",
     data: {
         firstName: "Edelmir",
         lastName: "Sanchiznho",
@@ -9,6 +10,7 @@ const mock: TemplateBuilder = {
         image: "https://picsum.photos/500",
         sections: {
             professionalSummary: {
+                title: "About me",
                 body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet nec diam in vulputate. Etiam hendrerit iaculis leo elementum euismod. Fusce ipsum mauris, tristique in enim vel, dictum eleifend metus. Cras facilisis dignissim elit, sed blandit nisi vestibulum id. Etiam vestibulum ornare tincidunt. ",
             },
             contact: {
@@ -91,8 +93,7 @@ const mock: TemplateBuilder = {
                 ]
             }
         }
-    },
-    template: template1
+    }
 }
 
 export default mock;
